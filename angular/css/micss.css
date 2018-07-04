@@ -1,51 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab');
-a{
-    color: black ; font-family:'Roboto Light";
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+*{
+    font-family: 'Rubik', sans-serif;
 }
-.botones{
-    width:4%;
+  a {
+    color: black;
+    font-family: 'Roboto Light";
 }
-.bloque{
-        margin-top: 100px;
+
+.botones {
+    width: 4%;
 }
-html{
+
+.bloque {
+    margin-top: 100px;
+}
+
+html {
     font-family: 'Roboto Condensed', sans-serif;
 }
-.cardsimg{
-    height:180px;
-}
-.texto{
+
+.texto {
     font-family: 'Roboto Mono';
     color: #000000;
 }
-.textotitle{
+
+.textotitle {
     font-family: 'Anton', sans-serif;
     color: #000000;
 }
-.backgroundparalax{
-background: no-repeat;
-background-size: cover;
-    background-image: url("mibostrap/imagenes/mundial.jpg");
+
+.backgroundparalax {
+    background: no-repeat;
+    background-size: cover;
+    height: 50%;
+    background-image: url("mibostrap/imagenes/background.png");
 }
-.noticias{
- 
-    height: 115px;
-    border-radius: 8px;
+.backgroundparalax-2 {
+    background: no-repeat;
+    background-size: cover;
+    height: 70%;
+    background-image: url("mibostrap/imagenes/backgroud-2.jpg");
 }
-.titulos{
-    font-family: 'Roboto Black';
-    font-size: 18px;
+.noticias {
+    height: 150px;
+    border-radius: 10px;
 
 }
-.cardnoticias{
+
+.titulos {
+    font-family: 'Roboto Black'
+}
+
+.cardnoticias {
     margin-top: 75px;
 }
-body{
+
+body {
     background: transparent;
 }
-.paises{
+
+.paises {
     height: 23.99px;
 }
+
 div.scrollmenu {
     background-color: #333;
     overflow: auto;
@@ -63,3 +80,4 @@ div.scrollmenu a {
 div.scrollmenu a:hover {
     background-color: #777;
 }
+

@@ -1,0 +1,1090 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+                <title>
+                    Mundiall | Principal
+                </title>
+                <link crossorigin="anonymous" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" rel="stylesheet">
+                    <link href="css/mibostrap/css/bootstrap-material-design.css" rel="stylesheet">
+                        <link href="css/micss.css" rel="stylesheet">
+                            <link href="css/page.css" rel="stylesheet">
+                                <script src="nucleo.js">
+                                </script>
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </meta>
+        </meta>
+    </head>
+    <body cz-shortcut-listen="true" ng-controller="controladorPrincipal">
+        <div class="container-fluid backgroundparalax">
+            <div class="">
+                <header class="blog-header py-3 ">
+                    <div class=" row flex-nowrap justify-content-between align-items-center">
+                        <div class="col-4 pt-1">
+                            <img alt="" height="70" src="Files/ui/logo-fifa.png" width="70px">
+                            </img>
+                        </div>
+                        <div class="col-4 text-center">
+                            <a class="blog-header-logo text-light " href="#">
+                                <font class="">
+                                    Mundiall
+                                </font>
+                            </a>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <a aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuLink" role="button">
+                                <font color="white">
+                                    Administrador
+                                </font>
+                            </a>
+                            <div aria-labelledby="dropdownMenuLink" class="dropdown-menu">
+                                <a class="dropdown-item" href="Editor.html">
+                                    Editor
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="nav-scroller py-1 mb-2 bg-light box-shadow">
+                    <nav class="nav d-flex ">
+                        <a class="p-2 text-muted" href="principal.html">
+                            Inicio
+                        </a>
+                        <a class="p-2 text-muted" href="Noticias.html">
+                            Noticias
+                        </a>
+                        <a class="p-2 text-muted" href="Videos.html">
+                            Videos
+                        </a>
+                        <a class="p-2 text-muted" href="Ejemplo.html">
+                            Perú Rumbo a Rusia
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div class="jumbotron p-3 p-md-5 text-dark rounded bg-light box-shadow">
+                <p class="display-4">
+                    <font style="">
+                        <strong>
+                            Rusia Mundial 2018
+                        </strong>
+                    </font>
+                </p>
+                <p>
+                    Mundial rusia 2018 , es una torneo mundial de futbol , donde los mejores equipos del mundo competiran por una
+            copa .
+                </p>
+            </div>
+            <hr>
+                <div class="row mb-2 my-5">
+                    <div class="col-md-12">
+                        <h1 class="display-4 mb-3">
+                            <strong>
+                                Proximos partidos
+                            </strong>
+                        </h1>
+                        <div style="overflow-x: hidden; height:230px ">
+                            <div class="card-group">
+                                <div class="col-md-4" ng-repeat="partido in partidos">
+                                    <div class="card flex-md-row mb-4 box-shadow text-center">
+                                        <div class="card-body text-dark">
+                                            <div class="card-text">
+                                                <div class="badge-pill">
+                                                    <font class="text-secondary">
+                                                        Fecha del partido:
+                                                    </font>
+                                                    <br>
+                                                        <p>
+                                                            <font class="text-center mx-0" color="#3c383e" size="4em">
+                                                                Jue., {{partido.fecha}} {{partido.hora}}
+                                                            </font>
+                                                        </p>
+                                                    </br>
+                                                </div>
+                                            </div>
+                                            <figure class="figure">
+                                                <img alt="Imagen del la bandera" class="figure-img img-fluid rounded" src="Files/paises/{{partido.equipo_l}}.png">
+                                                    <figcaption class="figure-caption text-center">
+                                                        {{partido.equipo_l}}
+                                                    </figcaption>
+                                                </img>
+                                            </figure>
+                                            <figure class="figure">
+                                                <figcaption class="figure-caption text-center m-3">
+                                                    <font color="black">
+                                                        <strong>
+                                                            VS
+                                                        </strong>
+                                                    </font>
+                                                </figcaption>
+                                            </figure>
+                                            <figure class="figure">
+                                                <img alt="Imagen del la bandera" class="figure-img img-fluid rounded" src="Files/paises/{{partido.equipo_v}}.png">
+                                                    <figcaption class="figure-caption text-center">
+                                                        {{partido.equipo_v}}
+                                                    </figcaption>
+                                                </img>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        </hr>
+                    </div>
+                    <div class="col-md-12 p-4">
+                        <h3 class=" h2 pb-3 mb-4 ">
+                            Fixtures del mundial de Rusia
+                        </h3>
+                        <div class="card-deck">
+                            <div class="card bg-dark text-white box-shadow">
+                                <img class="card-img responsive-imagen" data-holder-rendered="true" src="Files/mundial.jpg" style="max-height:250px">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">
+                                            Tabla de posiciones
+                                        </h5>
+                                        <p class="card-text">
+                                            Vea la tabla de pociciones de los paises que compiten el mundial Rusia
+                            2018.
+                                        </p>
+                                        <button class="btn btn-light text-center btn-block" data-target="#modalTabla" data-toggle="modal">
+                                            <strong>
+                                                <font color="">
+                                                    Ver
+                                                </font>
+                                            </strong>
+                                        </button>
+                                        >
+                                    </div>
+                                </img>
+                            </div>
+                            <div class="card bg-dark text-white box-shadow">
+                                <img class="card-img responsive-imagen" data-holder-rendered="true" src="Files/raul-ruidiaz.jpg" style="background-color: #e91e63">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">
+                                            Ver grupos
+                                        </h5>
+                                        <p class="card-text">
+                                            Vea los grupos oficiales de la FIFA
+                                        </p>
+                                        <button class="btn btn-light my-5 text-center btn-block" data-target="#modalGrupos" data-toggle="modal">
+                                            <strong>
+                                                <font color="">
+                                                    Ver
+                                                </font>
+                                            </strong>
+                                        </button>
+                                    </div>
+                                </img>
+                            </div>
+                            <div class="card bg-dark text-white box-shadow">
+                                <img class="card-img responsive-imagen" data-holder-rendered="true" src="Files/copa.jpg">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">
+                                            Jugadores destacados
+                                        </h5>
+                                        <p class="card-text">
+                                            Ver los jugadores destacados de los partidos del mundial Rusia 2018
+                                        </p>
+                                        <button class="btn btn-light text-center btn-block" data-target="#modalJugadores" data-toggle="modal">
+                                            <strong>
+                                                <font color="">
+                                                    Ver
+                                                </font>
+                                            </strong>
+                                        </button>
+                                    </div>
+                                </img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12 blog-main">
+                        <hr>
+                            <div class="blog-post mb-4">
+                                <h2 class="blog-post-title">
+                                    Noticias recientes
+                                </h2>
+                            </div>
+                            <div class="row" ng-controller="noticiasController">
+                                <div class="col-md-6 col-sm-12" ng-repeat="noti in noticias| limitTo:2">
+                                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                                        <div class="card-body d-flex flex-column align-items-start">
+                                            <h3 class="mb-2">
+                                                <a class="text-dark font-weight-bold" href="#">
+                                                    <font color="#dc143c" size="4em">
+                                                        {{noti.titulo}}
+                                                    </font>
+                                                </a>
+                                            </h3>
+                                            <p class="card-text mb-auto font-italic">
+                                                {{noti.cuerpo}}
+                                            </p>
+                                            <a href="{{noti.fuente}}">
+                                                <font class="badge-pill bg-light font-italic">
+                                                    Continue leyendo ...
+                                                </font>
+                                            </a>
+                                        </div>
+                                        <img alt="Thumbnail [200x250]" class="card-img-right flex-auto d-none d-md-block " data-holder-rendered="true" data-src="holder.js/200x250?theme=thumb" src="{{noti.imagen}}" style="width: 200px; height: 200px;border-radius:.5em">
+                                        </img>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="blog-pagination mb-4">
+                                <a class="btn btn-outline-primary" href="#">
+                                    Ver mas noticias
+                                </a>
+                            </nav>
+                        </hr>
+                    </div>
+                </div>
+            </hr>
+        </div>
+    </body>
+</html>
+<!--Modal-posiciones-->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalTabla" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Tabla de posiciones
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                #
+                            </th>
+                            <th scope="col">
+                                Equipos
+                            </th>
+                            <th scope="col">
+                                Puntaje
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/alemania.png">
+                                        <span class="align-text-top">
+                                            Alemania
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                18
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/Rusia.png">
+                                        <span class="align-text-top">
+                                            Rusia
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                16
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/peru.png">
+                                        <span class="align-text-top">
+                                            Perú
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                15
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                4
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/polonia.png">
+                                        <span class="align-text-top">
+                                            Polonia
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                15
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal de grupos-->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalGrupos" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Grupos">
+                    <h3 style="font-family: 'Roboto Black'">
+                        Grupos
+                    </h3>
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Vea los grupos de los equipos que juegaran en este mundial Rusia 2018.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link" data-target="#collapseOne" data-toggle="collapse">
+                                            Grupo A
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingOne" class="collapse show" data-parent="#accordion" id="collapseOne">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipo
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Rusia.png">
+                                                                <span class="align-text-top">
+                                                                    Rusia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Uruguay.png">
+                                                                <span class="align-text-top">
+                                                                    Uruguay
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Egipto.png">
+                                                                <span class="align-text-top">
+                                                                    Egipto
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Arabia%20Saudita.png">
+                                                                <span class="align-text-top">
+                                                                    Arabia Saudita
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseTwo" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseTwo" data-toggle="collapse">
+                                            Grupo B
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordion" id="collapseTwo">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Espa�a.png">
+                                                                <span class="align-text-top">
+                                                                    España
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Portugal.png">
+                                                                <span class="align-text-top">
+                                                                    Portugal
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Iran.png">
+                                                                <span class="align-text-top">
+                                                                    Iran
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Marruecos.png">
+                                                                <span class="align-text-top">
+                                                                    Marruecos
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseThree" data-toggle="collapse">
+                                            Grupo C
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseThree">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Francia.png">
+                                                                <span class="align-text-top">
+                                                                    Francia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Dinamarca.png">
+                                                                <span class="align-text-top">
+                                                                    Dinamarca
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Australia.png">
+                                                                <span class="align-text-top">
+                                                                    Australia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Peru.png">
+                                                                <span class="align-text-top">
+                                                                    Peru
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseFour" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseFour" data-toggle="collapse">
+                                            Grupo D
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseFour">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Croacia.png">
+                                                                <span class="align-text-top">
+                                                                    Croacia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Nigeria.png">
+                                                                <span class="align-text-top">
+                                                                    Nigeria
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Islandia.png">
+                                                                <span class="align-text-top">
+                                                                    Islandia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Argentina.png">
+                                                                <span class="align-text-top">
+                                                                    Argentina
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-header" id="headingFive">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseFive" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseFive" data-toggle="collapse">
+                                            Grupo E
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseFive">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th>
+                                                        Partidos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Brasil.png">
+                                                                <span class="align-text-top">
+                                                                    Brasil
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Suiza.png">
+                                                                <span class="align-text-top">
+                                                                    Suiza
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Serbia.png">
+                                                                <span class="align-text-top">
+                                                                    Serbia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <th scope="row">
+                                                    4
+                                                </th>
+                                                <td>
+                                                    <div class="img-responsive paises">
+                                                        <img alt="" class="paises" src="Files/paises/Costa%20Rica.png">
+                                                            <span class="align-text-top">
+                                                                Costa Rica
+                                                            </span>
+                                                        </img>
+                                                    </div>
+                                                </td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-header" id="headingSix">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseSix" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseSix" data-toggle="collapse">
+                                            Grupo F
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseSix">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Partidos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/M�xico.png">
+                                                                <span class="align-text-top">
+                                                                    Mexico
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Alemania.png">
+                                                                <span class="align-text-top">
+                                                                    Alemania
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Suecia.png">
+                                                                <span class="align-text-top">
+                                                                    Suecia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Corea%20del%20Sur.png">
+                                                                <span class="align-text-top">
+                                                                    Corea del sur
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-header" id="headingSeven">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseSeven" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseSeven" data-toggle="collapse">
+                                            Grupo G
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseSeven">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Inglaterra.png">
+                                                                <span class="align-text-top">
+                                                                    Inglaterra
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/B�lgica.png">
+                                                                <span class="align-text-top">
+                                                                    Belgica
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/T�nez.png">
+                                                                <span class="align-text-top">
+                                                                    Tunez
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Panama">
+                                                                <span class="align-text-top">
+                                                                    Panama
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-header" id="headingEight">
+                                    <h5 class="mb-0">
+                                        <button aria-controls="collapseEight" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapseEight" data-toggle="collapse">
+                                            Grupo H
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordion" id="collapseEight">
+                                    <div class="card-body">
+                                        <table class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">
+                                                        #
+                                                    </th>
+                                                    <th scope="col">
+                                                        Equipos
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">
+                                                        1
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Jap�n.png">
+                                                                <span class="align-text-top">
+                                                                    Japon
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        2
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Senegal.png">
+                                                                <span class="align-text-top">
+                                                                    Senegal
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        3
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Colombia.png">
+                                                                <span class="align-text-top">
+                                                                    Colombia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        4
+                                                    </th>
+                                                    <td>
+                                                        <div class="img-responsive paises">
+                                                            <img alt="" class="paises" src="Files/paises/Polonia.png">
+                                                                <span class="align-text-top">
+                                                                    Polonia
+                                                                </span>
+                                                            </img>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal de jugadores-->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalJugadores" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Jugadores Destacados
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <td>
+                        <img alt="" class="img-responsive rounded-circle " src="Files/jugadores/paolo-guerrero.png" style="height: 70px">
+                        </img>
+                    </td>
+                    <td>
+                        <h5 class="h5">
+                            Paolo Guerrero
+                        </h5>
+                    </td>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap -->
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js">
+</script>

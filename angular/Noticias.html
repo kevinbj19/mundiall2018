@@ -1,124 +1,157 @@
-<!DOCTYPE html>
-<html lang="en" ng-app='MainApp'>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Menu de inicio</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mundiall | Principal</title>
+    <link rel="stylesheet" href="css/mibostrap/css/bootstrap-material-design.css">
     <link rel="stylesheet" href="css/micss.css">
-    <!--Boostrap -->
-
-    <link rel="stylesheet"
-          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Rubik|Rubik+Mono+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <meta charset="UTF-8">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="nucleo.js"></script>
-    <title>Mundial Noticias</title>
+    <link rel="stylesheet" href="css/page.css">
 </head>
-<body ng-controller='noticiasController'>
-<div class=" fixed-top" style="font-family: 'Roboto Light'">
-    <nav class="navbar sticky-top " style="background-color: #2bbc7e"></nav>
-    <nav class="navbar navbar-expand-lg " style="background-color: #69efae">
-        <a class="navbar-brand textotitle" href="#">
-            <!--<img src="Files/kremlin.svg" width="30" height="30" class="d-inline-block align-top " >-->
-            MudiALL
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><img style="width: 30px" src="Files/menu.svg" alt=""></span>
-        </button>
+<body cz-shortcut-listen="true">
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active" style="color: black ; font-family:'Roboto Black';">
-                    <a class="nav-link texto" href="Vista_administrador.html">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto " href="Noticias.html">Noticias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto" href="Videos.html">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto" href="#">Perú rumbo a Rusia </a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="btn-group">
-                    <button class="btn btn-raised bmd-btn-icon dropdown-toggle" style="background-color: #ee2d02  "
-                            type="button" id="ll1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">more_vert</i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="ll1">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item disabled" type="button">Disabled action</button>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+<div class="container-fluid backgroundparalax">
+    <div class="">
+        <header class="blog-header py-3 " >
+            <div class=" row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <img src="Files/ui/logo-fifa.png" alt="" height="70" width="70px">
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-light "  href="#"><font class="">Mundiall</font></a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-sm btn-light btn-outline" href="#">Perfil</a>
+                </div>
+            </div>
+        </header>
+        <div class="nav-scroller py-1 mb-2 bg-light ">
+            <nav class="nav d-flex ">
+                <a class="p-2 text-muted" href="principal.html">Inicio</a>
+                <a class="p-2 text-muted" href="Noticias.html">Noticias</a>
+                <a class="p-2 text-muted" href="Videos.html">Videos</a>
+                <a class="p-2 text-muted" href="Ejemplo.html">Perú Rumbo a Rusia</a>
+            </nav>
+        </div>
+    </div>
+    <div class="jumbotron p-3 p-md-5 text-dark rounded bg-light ">
+        <p class="display-4"><font style=""><strong>Seccion Noticias</strong></font></p>
+        <p>Aca prodras encontrar las noticias mas relevantes de todos los portales de futbol mas populares del Perú</p>
+    </div>
+    <div class="row ">
+        <div class="col-md-12 blog-main">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-2">
+                                <a class="text-dark font-weight-bold" href="#"><font size="4em" color="#dc143c">¿Quien fue el mejor jugador en el partido ante Suecia? </font></a>
+                            </h3>
+
+                            <p class="card-text mb-auto font-italic">El volante de la seleccion peruana recibio un premio por su buena actuacion en el partido ante Suecia </p>
+                            <a href="#"><font class="badge-pill bg-light font-italic">Continue leyendo ...</font></a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block " data-src="holder.js/200x250?theme=thumb"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 200px;border-radius:.5em"
+                             src="Files/noticia%20%201.png"
+                             data-holder-rendered="true">
                     </div>
                 </div>
-                <a class="nav-link texto" href="#">administrador</a>
-            </form>
-        </div>
-    </nav>
-</div>
-<br>
-<div class="parallax  backgroundparalax" data-turbolinks="false">
-    <div class="container">
-        <div class="row">
-            <div class="container">
-                <div class="card cardnoticias">
-                    <div class="card-body">
-                         <div class="card-text">
-                                            <h5 class="card-title titulos">Noticias destacadas.</h5>
-                                            <p>En esta seccion encontraras las noticias mas recientes sobre el mundial
-                                                Rusia
-                                                2018</p>
-                                            <div class="row" ng-controller="noticiasController">
-                                                <div class="col-sm-6  col-xs-12" ng-repeat="noti in noticias">
-                                                    <div class="card bg-light">
-                                                        <div class="card-body ">
-                                                            <div class="row">
-                                                                <div class="col-sm-6  col-xs-12">
-                                                                    <div class="card-title titulos"><strong>{{noti.titulo}}</strong>
-                                                                    </div>
-                                                                    <div class="card-text">{{noti.cuerpo}}
-                                                                    </div>
-                                                                    <a href="{{noti.fuente}}" class="card-link"  target="_blank">Leer mas </a>
-                                                                </div>
-                                                                <div class="col-sm-6  col-xs-12">
-                                                                    <center>
-                                                                    <div class="card-img "><img class="noticias"
-                                                                                                src="{{noti.imagen}}"
-                                                                                                alt=""></div>
-                                                                    </center>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                </div>
-                                                <br>
-                                            </div>
-                                        </div>
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-2">
+                                <a class="text-dark font-weight-bold" href="#"><font size="4em" color="#dc143c">¿Quien fue el mejor jugador en el partido ante Suecia? </font></a>
+                            </h3>
+
+                            <p class="card-text mb-auto font-italic">El volante de la seleccion peruana recibio un premio por su buena actuacion en el partido ante Suecia </p>
+                            <a href="#"><font class="badge-pill bg-light font-italic">Continue leyendo ...</font></a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block " data-src="holder.js/200x250?theme=thumb"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 200px;border-radius:.5em"
+                             src="Files/noticia%20%201.png"
+                             data-holder-rendered="true">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-2">
+                                <a class="text-dark font-weight-bold" href="#"><font size="4em" color="#dc143c">¿Quien fue el mejor jugador en el partido ante Suecia? </font></a>
+                            </h3>
+
+                            <p class="card-text mb-auto font-italic">El volante de la seleccion peruana recibio un premio por su buena actuacion en el partido ante Suecia </p>
+                            <a href="#"><font class="badge-pill bg-light font-italic">Continue leyendo ...</font></a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block " data-src="holder.js/200x250?theme=thumb"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 200px;border-radius:.5em"
+                             src="Files/noticia%20%201.png"
+                             data-holder-rendered="true">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-2">
+                                <a class="text-dark font-weight-bold" href="#"><font size="4em" color="#dc143c">¿Quien fue el mejor jugador en el partido ante Suecia? </font></a>
+                            </h3>
+
+                            <p class="card-text mb-auto font-italic">El volante de la seleccion peruana recibio un premio por su buena actuacion en el partido ante Suecia </p>
+                            <a href="#"><font class="badge-pill bg-light font-italic">Continue leyendo ...</font></a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block " data-src="holder.js/200x250?theme=thumb"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 200px;border-radius:.5em"
+                             src="Files/noticia%20%201.png"
+                             data-holder-rendered="true">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card flex-md-row mb-4 none-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-2">
+                                <a class="text-dark font-weight-bold" href="#"><font size="4em" color="#dc143c">Capitan de Suecia sufrio amenazas por hablar de Guerrero </font></a>
+                            </h3>
+
+                            <p class="card-text mb-auto font-italic">Andreas Granqvist, capitan de la seleccion de Suecia, reintero que han mal interpretado sus ... </p>
+                            <a href="#"><font class="badge-pill bg-light font-italic">Continue leyendo ...</font></a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block " data-src="holder.js/200x250?theme=thumb"
+                             alt="Thumbnail [200x250]" style="width: 200px; height: 200px;border-radius:.5em"
+                             src="Files/2.png"
+                             data-holder-rendered="true">
                     </div>
                 </div>
             </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                    crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-                    integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-                    crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-                    integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-                    crossorigin="anonymous"></script>
     </div>
 </div>
+</main>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" viewBox="0 0 200 250" preserveAspectRatio="none"
+     style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
+    <defs>
+        <style type="text/css"></style>
+    </defs>
+    <text x="0" y="13" style="font-weight:bold;font-size:13pt;font-family:Arial, Helvetica, Open Sans, sans-serif">
+        Thumbnail
+    </text>
+</svg>
 </body>
 </html>

@@ -1,371 +1,502 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='MainApp'>
-<head>
-    <meta charset="UTF-8">
-    <title>Menu de inicio</title>
-    <link rel="stylesheet" href="css/micss.css">
-    <!--Boostrap -->
-
-    <link rel="stylesheet"
-          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Rubik|Rubik+Mono+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="nucleo.js"></script>
-</head>
-<body ng-controller='controladorPrincipal'>
-<!--<div class="container-fluid">Contenedor principal-->
-<div class=" fixed-top" style="font-family: 'Roboto Light'">
-    <nav class="navbar sticky-top " style="background-color: #2bbc7e"></nav>
-    <nav class="navbar navbar-expand-lg " style="background-color: #69efae">
-        <a class="navbar-brand textotitle" href="#">
-            <!--<img src="Files/kremlin.svg" width="30" height="30" class="d-inline-block align-top " >-->
-            MudiALL
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><img style="width: 30px" src="Files/menu.svg" alt=""></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active" style="color: black ; font-family:'Roboto Black';">
-                    <a class="nav-link texto" href="Vista_administrador.html">Inicio <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto " href="Noticias.html">Noticias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto disabled" href="">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link texto disabled" href="#">Perú rumbo a Rusia </a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="btn-group">
-                    <button class="btn btn-raised bmd-btn-icon dropdown-toggle btn-light"
-                            style="background-color: #525a96  "
-                            type="button" id="ll1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">more_vert</i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="ll1">
-                        <a class="dropdown-item" href="Vista_usuario.html">Vista usuario</a>
-                        <a class="dropdown-item" href="//localhost:3000">Editor</a>
-                    </div>
-                </div>
-                <a class="nav-link texto" href="#">administrador</a>
-            </form>
-        </div>
-    </nav>
-</div>
-<div class="parallax  backgroundparalax" data-turbolinks="false">
-    <div class="container">
-        <div class="row">
-            <div class="container-fluid bloque">
-                <div class="container" style="width: 90%">
-                    <div class="row">
-                        <div class="col-sm-12  col-xs-12 mb-3">
-                            <div class="card"><!--Empiza el card principal el grande-->
-                                <div class="card-body">
-                                    <h5 class="card-title" style="font-family: 'Roboto Black'">Mundial Rusia 2018</h5>
-                                    <!--Titulo del card-->
-                                    <!--Empieza el primer grupo card-->
-                                    <!--Partidos-->
-                                    <div class="card-group">
-                                        <div class="row">
-                                            <div class="col-sm-12 mb-3">
-                                                <div class="card-group">    
-                                                    <!--Esto se debe repetir-->
-                                                    <div  ng-repeat="partido in areas" class="col-sm-4" style="width:65em">
-                                                        <div class="card bg-light mb-3">
-                                                            <div class="card-body ">
-                                                                <div class="card-header titulos">Proximo partido</div>
-                                                                <h6 class="card-title titulos ">{{partido.equipo_l}} vs {{partido.equipo_v}}</h6>
-                                                                <p class="card-text">Jue., {{partido.fecha}} {{partido.hora}}</p>
-                                                                <table class="table table-responsive-sm">
-                                                                    <td><img class="img-responsive"
-                                                                             src="Files/paises/{{partido.equipo_l}}.png"
-                                                                             alt=""><h6>{{partido.equipo_l}}</h6></td>
-                                                                    <td><h4 class="align-text-top">VS</h4></td>
-                                                                    <td><img class="img-responsive"
-                                                                             src="Files/paises/{{partido.equipo_v}}.png"
-                                                                             alt="">
-                                                                        <h6
-                                                                                class="align-content-center">{{partido.equipo_v}}</h6></td>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Fin de esto se debe repetir-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Opciones-->
-                                    <div class="card-group">
-                                        <div class="row">
-                                            <div class="col-sm-4  col-xs-12 mb-3">
-                                                <div class="card-img-top">
-                                                    <div class="card bg-dark text-white">
-                                                        <img class="card-img img-responsive cardsimg"
-                                                             src="Files/mundial.jpg "
-                                                             alt="Card image">
-                                                        <div class="card-img-overlay">
-                                                            <h5 class="card-title" style="font-family: 'Roboto Black'">
-                                                                Tabla de
-                                                                posiciones</h5>
-                                                            <p class="card-text">Ve la tabla de las posiciones de los
-                                                                partidos
-                                                                del mundial.</p>
-
-                                                            <button type="button"
-                                                                    class="btn btn-primary bg-inverse active btn-light"
-                                                                    data-toggle="modal"
-                                                                    data-target="#exampleModal">
-                                                                <p class="card-text">Ver tabla </p>
-                                                            </button>
-                                                            <br>
-                                                            <br>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4  col-xs-12 mb-3">
-                                                <div class="card-img-top">
-                                                    <div class="card bg-dark text-white ">
-                                                        <img class="card-img img-responsive cardsimg"
-                                                             src="Files/paolo.png "
-                                                             alt="Card image">
-                                                        <div class="card-img-overlay">
-                                                            <h5 class="card-title" style="font-family: 'Roboto Black'">
-                                                                Grupos</h5>
-                                                            <p class="card-text">Ve la tabla de los grupos de los
-                                                                partidos
-                                                                del mundial.</p>
-
-                                                            <button type="button"
-                                                                    class="btn btn-primary bg-inverse active btn-light"
-                                                                    data-toggle="modal"
-                                                                    data-target="#modalGrupos">
-                                                                <p class="card-text">Ver grupos</p>
-                                                            </button>
-                                                            <br>
-                                                            <br>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4  col-xs-12 mb-3">
-                                                <div class="card-img-top">
-                                                    <div class="card bg-dark text-white">
-                                                        <img class="card-img img-responsive cardsimg"
-                                                             src="Files/raul-ruidiaz.jpg"
-                                                             alt="Card image">
-                                                        <div class="card-img-overlay">
-                                                            <h5 class="card-title" style="font-family: 'Roboto Black'">
-                                                                Jugadores
-                                                                destacados</h5>
-                                                            <p class="card-text">Ve la tabla de las posiciones de los
-                                                                partidos
-                                                                del mundial.</p>
-                                                            <button type="button"
-                                                                    class="btn btn-primary bg-inverse active btn-light"
-                                                                    data-toggle="modal"
-                                                                    data-target="#modalJugadores">
-                                                                <p class="card-text">Ver lista </p>
-                                                            </button>
-                                                            <br>
-                                                            <br>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Noticias-->
-                                    <div class="card-group">
-                                        <div class="card-text">
-                                            <h5 class="card-title titulos">Noticias destacadas.</h5>
-                                            <p>En esta seccion encontraras las noticias mas recientes sobre el mundial
-                                                Rusia
-                                                2018</p>
-                                            <div class="row" ng-controller="noticiasController">
-                                                <div class="col-sm-6  col-xs-12" ng-repeat="noti in noticias| limitTo:2">
-                                                    <div class="card bg-light">
-                                                        <div class="card-body ">
-                                                            <div class="row">
-                                                                <div class="col-sm-6  col-xs-12">
-                                                                    <div class="card-title titulos"><strong>{{noti.titulo}}</strong>
-                                                                    </div>
-                                                                    <div class="card-text">{{noti.cuerpo}}
-                                                                    </div>
-                                                                    <a href="{{noti.fuente}}" class="card-link"  target="_blank">Leer mas </a>
-                                                                </div>
-                                                                <div class="col-sm-6  col-xs-12">
-                                                                    <div class="card-img "><img class="noticias"
-                                                                                                src="{{noti.imagen}}"
-                                                                                                alt=""></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br>
-                                                </div>
-                                                <br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!--Termina el card grande-->
+<html lang="en" ng-app="MainApp">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Menu de inicio
+            </title>
+            <link href="css/micss.css" rel="stylesheet">
+                <!--Boostrap -->
+                <link crossorigin="anonymous" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+                        <link href="https://fonts.googleapis.com/css?family=Rubik|Rubik+Mono+One" rel="stylesheet">
+                            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+                                <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
+                                </script>
+                                <script src="nucleo.js">
+                                </script>
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </meta>
+    </head>
+    <body ng-controller="controladorPrincipal">
+        <!--<div class="container-fluid">Contenedor principal-->
+        <div class=" fixed-top" style="font-family: 'Roboto Light'">
+            <nav class="navbar sticky-top " style="background-color: #2bbc7e">
+            </nav>
+            <nav class="navbar navbar-expand-lg " style="background-color: #69efae">
+                <a class="navbar-brand textotitle" href="#">
+                    <!--<img src="Files/kremlin.svg" width="30" height="30" class="d-inline-block align-top " >-->
+                    MudiALL
+                </a>
+                <button aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon">
+                        <img alt="" src="Files/menu.svg" style="width: 30px"/>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active" style="color: black ; font-family:'Roboto Black';">
+                            <a class="nav-link texto" href="Vista_administrador.html">
+                                Inicio
+                                <span class="sr-only">
+                                    (current)
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link texto " href="Noticias.html">
+                                Noticias
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link texto disabled" href="">
+                                Videos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link texto disabled" href="#">
+                                Perú rumbo a Rusia
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="btn-group">
+                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-raised bmd-btn-icon dropdown-toggle btn-light" data-toggle="dropdown" id="ll1" style="background-color: #525a96  " type="button">
+                                <i class="material-icons">
+                                    more_vert
+                                </i>
+                            </button>
+                            <div aria-labelledby="ll1" class="dropdown-menu dropdown-menu-left">
+                                <a class="dropdown-item" href="Vista_usuario.html">
+                                    Vista usuario
+                                </a>
+                                <a class="dropdown-item" href="Editor.html">
+                                    Editor
+                                </a>
+                            </div>
                         </div>
-
-                    </div><!--Finaliza el primer row-->
+                        <a class="nav-link texto" href="#">
+                            administrador
+                        </a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="parallax backgroundparalax" data-turbolinks="false">
+            <div class="container">
+                <div class="row">
+                    <div class="container-fluid bloque">
+                        <div class="container" style="width: 90%">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12 mb-3">
+                                    <div class="card">
+                                        <!--Empiza el card principal el grande-->
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="font-family: 'Roboto Black'">
+                                                Mundial Rusia 2018
+                                            </h5>
+                                            <!--Titulo del card-->
+                                            <!--Empieza el primer grupo card-->
+                                            <!--Partidos-->
+                                            <div class="card-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12 mb-3">
+                                                        <div class="card-group">
+                                                            <!--Esto se debe repetir-->
+                                                            <div class="col-sm-4" ng-repeat="partido in areas" style="width:65em">
+                                                                <div class="card bg-light mb-3">
+                                                                    <div class="card-body ">
+                                                                        <div class="card-header titulos">
+                                                                            Proximo partido
+                                                                        </div>
+                                                                        <h6 class="card-title titulos ">
+                                                                            {{partido.equipo_l}} vs {{partido.equipo_v}}
+                                                                        </h6>
+                                                                        <p class="card-text">
+                                                                            Jue., {{partido.fecha}} {{partido.hora}}
+                                                                        </p>
+                                                                        <table class="table table-responsive-sm">
+                                                                            <td>
+                                                                                <img alt="" class="img-responsive" src="./Files/paises/{{partido.equipo_l}}.png">
+                                                                                    <h6>
+                                                                                        {{partido.equipo_l}}
+                                                                                    </h6>
+                                                                                </img>
+                                                                            </td>
+                                                                            <td>
+                                                                                <h4 class="align-text-top">
+                                                                                    VS
+                                                                                </h4>
+                                                                            </td>
+                                                                            <td>
+                                                                                <img alt="" class="img-responsive" src="./Files/paises/{{partido.equipo_v}}.png">
+                                                                                    <h6 class="align-content-center">
+                                                                                        {{partido.equipo_v}}
+                                                                                    </h6>
+                                                                                </img>
+                                                                            </td>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Fin de esto se debe repetir-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Opciones-->
+                                            <div class="card-group">
+                                                <div class="row">
+                                                    <div class="col-sm-4 col-xs-12 mb-3">
+                                                        <div class="card-img-top">
+                                                            <div class="card bg-dark text-white">
+                                                                <img alt="Card image" class="card-img img-responsive cardsimg" src="Files/mundial.jpg ">
+                                                                    <div class="card-img-overlay">
+                                                                        <h5 class="card-title" style="font-family: 'Roboto Black'">
+                                                                            Tabla de
+                                                                posiciones
+                                                                        </h5>
+                                                                        <p class="card-text">
+                                                                            Ve la tabla de las posiciones de los
+                                                                partidos
+                                                                del mundial.
+                                                                        </p>
+                                                                        <button class="btn btn-primary bg-inverse active btn-light" data-target="#exampleModal" data-toggle="modal" type="button">
+                                                                            <p class="card-text">
+                                                                                Ver tabla
+                                                                            </p>
+                                                                        </button>
+                                                                        <br>
+                                                                            <br>
+                                                                            </br>
+                                                                        </br>
+                                                                    </div>
+                                                                </img>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-12 mb-3">
+                                                        <div class="card-img-top">
+                                                            <div class="card bg-dark text-white ">
+                                                                <img alt="Card image" class="card-img img-responsive cardsimg" src="Files/paolo.png ">
+                                                                    <div class="card-img-overlay">
+                                                                        <h5 class="card-title" style="font-family: 'Roboto Black'">
+                                                                            Grupos
+                                                                        </h5>
+                                                                        <p class="card-text">
+                                                                            Ve la tabla de los grupos de los
+                                                                partidos
+                                                                del mundial.
+                                                                        </p>
+                                                                        <button class="btn btn-primary bg-inverse active btn-light" data-target="#modalGrupos" data-toggle="modal" type="button">
+                                                                            <p class="card-text">
+                                                                                Ver grupos
+                                                                            </p>
+                                                                        </button>
+                                                                        <br>
+                                                                            <br>
+                                                                            </br>
+                                                                        </br>
+                                                                    </div>
+                                                                </img>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-12 mb-3">
+                                                        <div class="card-img-top">
+                                                            <div class="card bg-dark text-white">
+                                                                <img alt="Card image" class="card-img img-responsive cardsimg" src="Files/raul-ruidiaz.jpg">
+                                                                    <div class="card-img-overlay">
+                                                                        <h5 class="card-title" style="font-family: 'Roboto Black'">
+                                                                            Jugadores
+                                                                destacados
+                                                                        </h5>
+                                                                        <p class="card-text">
+                                                                            Ve la tabla de las posiciones de los
+                                                                partidos
+                                                                del mundial.
+                                                                        </p>
+                                                                        <button class="btn btn-primary bg-inverse active btn-light" data-target="#modalJugadores" data-toggle="modal" type="button">
+                                                                            <p class="card-text">
+                                                                                Ver lista
+                                                                            </p>
+                                                                        </button>
+                                                                        <br>
+                                                                            <br>
+                                                                            </br>
+                                                                        </br>
+                                                                    </div>
+                                                                </img>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Noticias-->
+                                            <div class="card-group">
+                                                <div class="card-text">
+                                                    <h5 class="card-title titulos">
+                                                        Noticias destacadas.
+                                                    </h5>
+                                                    <p>
+                                                        En esta seccion encontraras las noticias mas recientes sobre el mundial
+                                                Rusia
+                                                2018
+                                                    </p>
+                                                    <div class="row" ng-controller="noticiasController">
+                                                        <div class="col-sm-6 col-xs-12" ng-repeat="noti in noticias| limitTo:2">
+                                                            <div class="card bg-light">
+                                                                <div class="card-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="card-title titulos">
+                                                                                <strong>
+                                                                                    {{noti.titulo}}
+                                                                                </strong>
+                                                                            </div>
+                                                                            <div class="card-text">
+                                                                                {{noti.cuerpo}}
+                                                                            </div>
+                                                                            <a class="card-link" href="{{noti.fuente}}" target="_blank">
+                                                                                Leer mas
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="card-img ">
+                                                                                <img alt="" class="noticias" src="{{noti.imagen}}"/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            </br>
+                                                        </div>
+                                                        <br>
+                                                        </br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Termina el card grande-->
+                                </div>
+                            </div>
+                            <!--Finaliza el primer row-->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
+    </body>
+</html>
 <!--Modal-->
-
 <!--Modal-posiciones-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tabla de posiciones</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Tabla de posiciones
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
                 </button>
             </div>
             <div class="modal-body">
                 <table class="table table-striped">
                     <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Equipos</th>
-                        <th scope="col">Puntaje</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">
+                                #
+                            </th>
+                            <th scope="col">
+                                Equipos
+                            </th>
+                            <th scope="col">
+                                Puntaje
+                            </th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>
-                            <div class="img-responsive paises"><img class="paises"
-                                                                    src="Files/paises/alemania.png"
-                                                                    alt=""> <span
-                                    class="align-text-top">Alemania </span>
-                            </div>
-                        </td>
-                        <td>18</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>
-                            <div class="img-responsive paises"><img class="paises"
-                                                                    src="Files/paises/Rusia.png"
-                                                                    alt=""> <span
-                                    class="align-text-top">Rusia </span>
-                            </div>
-
-                        </td>
-                        <td>16</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>
-                            <div class="img-responsive paises"><img class="paises"
-                                                                    src="Files/paises/peru.png"
-                                                                    alt=""> <span
-                                    class="align-text-top">Perú </span>
-                            </div>
-                        </td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>
-                            <div class="img-responsive paises"><img class="paises"
-                                                                    src="Files/paises/polonia.png"
-                                                                    alt=""> <span
-                                    class="align-text-top">Polonia </span>
-                            </div>
-                        </td>
-                        <td>15</td>
-                    </tr>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/alemania.png">
+                                        <span class="align-text-top">
+                                            Alemania
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                18
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/Rusia.png">
+                                        <span class="align-text-top">
+                                            Rusia
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                16
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/peru.png">
+                                        <span class="align-text-top">
+                                            Perú
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                15
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                4
+                            </th>
+                            <td>
+                                <div class="img-responsive paises">
+                                    <img alt="" class="paises" src="Files/paises/polonia.png">
+                                        <span class="align-text-top">
+                                            Polonia
+                                        </span>
+                                    </img>
+                                </div>
+                            </td>
+                            <td>
+                                15
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
             </div>
         </div>
     </div>
 </div>
 <!--Modal de grupos-->
-<div class="modal fade" id="modalGrupos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalGrupos" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="Grupos"><h3 style="font-family: 'Roboto Black'">Grupos</h3></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <h5 class="modal-title" id="Grupos">
+                    <h3 style="font-family: 'Roboto Black'">
+                        Grupos
+                    </h3>
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Vea los grupos de los equipos que juegaran en este mundial Rusia 2018.</p>
+                <p>
+                    Vea los grupos de los equipos que juegaran en este mundial Rusia 2018.
+                </p>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="btn-group-vertical">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo A</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo A
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo B</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo B
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo C</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo C
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo D</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo D
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -373,47 +504,75 @@
                     <div class="col-sm-6">
                         <div class="btn-group-vertical">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo E</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo E
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo F</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo F
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo G</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo G
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-danger">Grupo H</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                <button class="btn btn-outline-danger" type="button">
+                                    Grupo H
+                                </button>
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" type="button">
+                                    <span class="sr-only">
+                                        Toggle Dropdown
+                                    </span>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Ver paises</a>
-                                    <a class="dropdown-item" href="#">Ver partidos</a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver paises
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        Ver partidos
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -421,59 +580,65 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
             </div>
         </div>
     </div>
 </div>
 <!--Modal de jugadores-->
-<div class="modal fade" id="modalJugadores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modalJugadores" role="dialog" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Jugadores Destacados</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <h5 class="modal-title">
+                    Jugadores Destacados
+                </h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">
+                        ×
+                    </span>
                 </button>
             </div>
             <div class="modal-body">
                 <table>
                     <td>
-                        <img class="img-responsive rounded-circle " style="height: 70px"
-                             src="Files/jugadores/paolo-guerrero.png" alt="">
+                        <img alt="" class="img-responsive rounded-circle " src="Files/jugadores/paolo-guerrero.png" style="height: 70px">
+                        </img>
                     </td>
                     <td>
-                        <h5 class="h5">Paolo Guerrero</h5>
+                        <h5 class="h5">
+                            Paolo Guerrero
+                        </h5>
                     </td>
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                    Cerrar
+                </button>
             </div>
         </div>
     </div>
 </div>
-
 <!--Pie de pagina-->
 <div class="container-fluid" style="background-color: #223168 ;height: 100px">
     <div class="container mb-3">
-        <h4 class="h6 text-white">Derechos Reservados de las noticias , a sus respectivos autores . </h4>
-        <h4 class="h6 text-white">MundiAll </h4>
-
+        <h4 class="h6 text-white">
+            Derechos Reservados de las noticias , a sus respectivos autores .
+        </h4>
+        <h4 class="h6 text-white">
+            MundiAll
+        </h4>
         <br>
+        </br>
     </div>
 </div>
-
 <!--Scripts-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+<script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js">
+</script>
+<script crossorigin="anonymous" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js">
+</script>

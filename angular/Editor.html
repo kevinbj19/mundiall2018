@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MainApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Editor</title>
+    <link rel="stylesheet" href="css/micss.css">
+    <!--Boostrap -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh eet">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Rubik|Rubik+Mono+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="nucleo.js"></script>
+</head>
+<body class="trasparente" ng-controller="controladorPrincipal" >
+<!--Tab inferior-->
+<div class="fixed-bottom" style=" box-shadow: 0px -15px 31px 1px rgba(214,214,214,0.5);">
+    <nav class="navbar navbar-light bg-light navbarcontainer ">
+        <span class="navbar-brand mb-0 h1">Editor</span>
+        <form class="form-inline">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" data-toggle="tab" href="#nav-editar" role="tab"
+                       aria-controls="nav-editar" aria-selected="true">Editar</a>
+                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-crear" role="tab"
+                       aria-controls="nav-crear" aria-selected="false">Crear</a>
+                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-eliminar" role="tab"
+                       aria-controls="nav-eliminar" aria-selected="false">Eliminar</a>
+                </div>
+            </nav>
+        </form>
+    </nav>
+  
+</div>
+<!--Tab inferior-->
+<div class="container margin" ng-controller="noticiasController">
+    <div class="card mt-3" ng-controller="mostrarPaises">
+        <div class="card-text shadown ">
+            <!--Tab inferior items-->
+            <div class="tab-content ">
+                <!--Tab inferior items editar-->
+                <div class="tab-pane fade show active " id="nav-editar" role="tabpanel" aria-labelledby="nav-editar-tab">
+                    <div class="bd-example bd-example-tabs">
+                        <!--Tab superior editar-->
+                        <nav>
+                            <div class="nav nav-tabs" role="tablist">
+                                <a class="nav-item nav-link active show" id="nav-epartidos-tab" data-toggle="tab"
+                                   href="#nav-epartidos" role="tab" aria-controls="nav-epartidos" aria-selected="true">Partidos
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-enoticias-tab" data-toggle="tab"
+                                   href="#nav-enoticias" role="tab" aria-controls="nav-enoticias" aria-selected="false">Noticias
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-ejugadores-tab" data-toggle="tab"
+                                   href="#nav-ejugadores" role="tab" aria-controls="nav-ejugadores"
+                                   aria-selected="false">Jugadores
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </div>
+                        </nav>
+                        <!--Tab superior contenido editar-->
+                        <div class="tab-content" >
+                            <!--Tab superior contenido editar partidos-->
+                            <div class="tab-pane fade active show" id="nav-epartidos" role="tabpanel"
+                                 aria-labelledby="nav-epartidos-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Editar partidos
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid  col-md-12 col-sm-12 col-xs-12">
+                                            <div class="row mb-4">
+                                                <div class="col-md-12 col-sm-8 col-xs-4">
+                                                    <div class="card-text ">
+                                                        <p class="h6 text-secondary">
+                                                            Este tool , edita la tabla de los partidos , de la seccion
+                                                            proximos partidos de la pagina principal .
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 col-sm-8 col-xs-4">
+                                                    <div class="card">
+                                                        <div class="card-header h3 text-secondary">
+                                                            Tabla partidos
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive-lg">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">Pais Local</th>
+                                                                    <th scope="col">Pais Vistante</th>
+                                                                    <th scope="col">Hora</th>
+                                                                    <th scope="col">Fecha</th>
+                                                                    <th scope="col">Estadio</th>
+                                                                    <th scope="col">Accion</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="partido in partidos" >
+                                                                    <td>{{partido.equipo_l}}</td>
+                                                                    <td>{{partido.equipo_v}}</td>
+                                                                    <td>{{partido.hora}}</td>
+                                                                    <td>{{partido.fecha}}</td>
+                                                                    <td>{{partido.estadio}}</td>
+
+                                                                    <td>
+                                                                        <button class="btn btn-light active "
+                                                                                data-toggle="modal"
+                                                                                data-target="#epartidosmodal"
+                                                                               ng-click="selectPartido(partido)">Editar
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <!--Modal del editar partido-->
+                                                                <div class="modal fade" id="epartidosmodal"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="exampleModalLongTitle"
+                                                                     aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title h3 text-dark">
+                                                                                    Editar el encuentro </h5>
+                                                                                <button type="button" class="close"
+                                                                                        data-dismiss="modal"
+                                                                                        aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form name="myForm2">
+                                                                                    <div class="form-group">
+                                                                                        <label>Seleccione el
+                                                                                            equipo local</label>
+                                                                                        <select class="form-control"
+                                                                                               ng-model="newPartido.equipo_l"
+                                                                                                required>
+                                                                                            <option   ng-repeat="pais in paises"
+                                                                                                    value="{{pais.nombre}}">
+                                                                                                {{pais.nombre}}
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label>Seleccione el
+                                                                                            equipo visitante</label>
+                                                                                        <select class="form-control"
+                                                                                            ng-model="newPartido.equipo_v"
+                                                                                                required
+                                                                                                >
+                                                                                        
+                                                                                            <option  ng-repeat="pais in paises"
+                                                                                                    value="{{pais.nombre}}">
+                                                                                                {{pais.nombre}}
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label>Estadio</label>
+                                                                                        <input class="form-control"
+                                                                                               type="text"
+                                                                                               ng-model="newPartido.estadio">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label>Fecha de
+                                                                                            encuentro</label>
+                                                                                        <input class="form-control"
+                                                                                               type="date"
+                                                                                               ng-model="newPartido.fecha">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label>Hora de
+                                                                                            encuentro</label>
+                                                                                        <input class="form-control"
+                                                                                               type="time"
+                                                                                               ng-model="newPartido.hora">
+                                                                                    </div>
+
+                                                                                    <button class=" btn btn-dark  btn-raised bg-danger "
+                                                                                            type="submit"
+                                                                                            ng-click='modificarPartido(newPartido)'>
+                                                                                        Actualizar
+                                                                                    </button>
+                                                                                    <div class="modal-footer"
+                                                                                         data-dismiss="modal">
+                                                                                        <button type="button"
+                                                                                                class="btn btn-secondary"
+                                                                                                data-dismiss="modal">
+                                                                                            Cerrar
+                                                                                        </button>
+
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="Vista_administrador.html" class="btn btn-primary  active"
+                                               role="button"
+                                               aria-pressed="true">Volver al menu inicio</a>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Tab superior contenido editar noticias-->
+                            <div class="tab-pane fade" id="nav-enoticias" role="tabpanel"
+                                 aria-labelledby="nav-enoticias-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Noticias
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid  col-md-12 col-sm-12 col-xs-12">
+                                            <div class="row mb-4">
+                                                <div class="col-md-12 col-sm-8 col-xs-4">
+                                                    <div class="card-text ">
+                                                        <p class="h6 text-secondary">
+                                                            Este tool , edita la tabla de las noticias.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-12 col-sm-8 col-xs-4">
+                                                    <div class="card">
+                                                        <div class="card-header h3 text-secondary">
+                                                            Tabla noticias
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive lg">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">Titulo</th>
+                                                                    <th scope="col">Cuerpo</th>
+                                                                    <th scope="col">Link</th>
+                                                                    <th scope="col">Foto</th>
+                                                                    <th scope="col">Accion</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="noti in noticias">
+                                                                    <td>{{noti.titulo}}</td>
+                                                                    <td>{{noti.cuerpo}}
+                                                                    </td>
+                                                                    <td><a href="{{noti.fuente}}"  target="_blank">{{noti.fuente}}</a></td>
+                                                                    <td> <img style="height: 53px;" src="{{noti.imagen}}"></td>
+                                                                    <td>
+                                                                        <button class="btn btn-light active "
+                                                                                data-toggle="modal"
+                                                                                ng-click="selectNoticia(noti)"
+                                                                                data-target="#enoticiasmodal">Editar
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <!--Modal-->
+                                                                <div class="modal fade" id="enoticiasmodal"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="exampleModalLongTitle"
+                                                                     aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Editar noticia</h5>
+                                                                                <button type="button" class="close"
+                                                                                        data-dismiss="modal"
+                                                                                        aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+
+                                                                                         <form >
+                                                                        <div class="form-group">
+                                                                            <label for="exampleFormControlInput1">Titulo de la
+                                                                                noticia</label>
+                                                                            <input type="text"  ng-model="newNoticia.titulo" class="form-control"
+                                                                                   id="exampleFormControlInput1">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleFormControlTextarea1">Cuerpo de
+                                                                                la noticia</label>
+                                                                            <textarea class="form-control" ng-model="newNoticia.cuerpo"
+                                                                                      id="exampleFormControlTextarea1"
+                                                                                      rows="3" ></textarea>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <input class="form-control form-control-sm"
+                                                                                   ng-model="newNoticia.fuente" type="text"
+                                                                                   placeholder="Link de la fuente de la noticia" >
+                                                                        </div>
+                                                                        <br>
+                                                                        <div class="form-group">
+                                                                             <input class="form-control form-control-sm"
+                                                                           ng-model="newNoticia.imagen" type="text"
+                                                                           placeholder="Link de la foto" >
+                                                                            </div>
+                                                                        <button class=" btn btn-dark  btn-raised bg-danger "
+                                                                                type="submit"  ng-click='modificarNoticia(newNoticia)'>Aceptar
+                                                                        </button>
+                                                                       
+                                                                    </form>
+
+
+
+
+
+
+
+
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                        class="btn btn-secondary"
+                                                                                        data-dismiss="modal">Cerrar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="Vista_administrador.html" class="btn btn-primary  active"
+                                               role="button"
+                                               aria-pressed="true">Volver al menu inicio</a>
+                                        </div>
+                                        <br>
+                                </div>
+                            </div>
+                            <!--Tab superior contenido editar jugadores-->
+                            <div class="tab-pane fade" id="nav-ejugadores" role="tabpanel"
+                                 aria-labelledby="nav-ejugadores-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Jugadores
+                                    </div>
+                                        <div class="card-body">
+                                            <div class="container-fluid  col-md-12 col-sm-12 col-xs-12">
+                                                <div class="row mb-4">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="card-text ">
+                                                            <p class="h6 text-secondary">
+                                                                Este tool , edita la tabla de las noticias.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="card">
+                                                            <div class="card-header h3 text-secondary">
+                                                                Tabla jugadores
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <table class="table  table-responsive-lg">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Nombres</th>
+                                                                        <th scope="col">Apellidos</th>
+                                                                        <th scope="col">Logro</th>
+                                                                        <th scope="col">Foto</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>Paolo</td>
+                                                                        <td>Guerrero</td>
+                                                                        <td> Jugara en este mundial</td>
+                                                                        <td><img style="height: 53px"
+                                                                                 src="Files/jugadores/paolo-guerrero.png"
+                                                                                 alt=""></td>
+                                                                        <td>
+                                                                            <button class="btn btn-light active"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#ejugadoresmodal">Editar
+                                                                            </button>
+                                                                        </td>
+                                                                        <!--modal-->
+                                                                        <div class="modal fade" id="ejugadoresmodal"
+                                                                             tabindex="-1" role="dialog"
+                                                                             aria-labelledby="exampleModalLongTitle"
+                                                                             aria-hidden="true">
+                                                                            <div class="modal-dialog" role="document">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h5 class="modal-title"
+                                                                                            id="exampleModalLongTitle">Modal
+                                                                                            title</h5>
+                                                                                        <button type="button" class="close"
+                                                                                                data-dismiss="modal"
+                                                                                                aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        ...
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button"
+                                                                                                class="btn btn-secondary"
+                                                                                                data-dismiss="modal">Close
+                                                                                        </button>
+                                                                                        <button type="button"
+                                                                                                class="btn btn-primary">Save
+                                                                                            changes
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="Vista_administrador.html" class="btn btn-primary  active"
+                                               role="button"
+                                               aria-pressed="true">Volver al menu inicio</a>
+                                        </div>
+                                        <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Tab inferior items crear-->
+                <div class="tab-pane fade bg-success bg-primary" id="nav-crear" role="tabpanel" aria-labelledby="nav-crear-tab">
+                    <div class="bd-example bd-example-tabs">
+                        <!--Tab superior crear-->
+                        <nav>
+                            <div class="nav nav-tabs" role="tablist">
+                                <a class="nav-item nav-link active show" id="nav-cpartidos-tab" data-toggle="tab"
+                                   href="#nav-cpartidos" role="tab" aria-controls="nav-cpartidos" aria-selected="true">Partidos
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-cnoticias-tab" data-toggle="tab"
+                                   href="#nav-cnoticias" role="tab" aria-controls="nav-cnoticias" aria-selected="false">Noticias
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-cjugadores-tab" data-toggle="tab"
+                                   href="#nav-cjugadores" role="tab" aria-controls="nav-cjugadores"
+                                   aria-selected="false">Jugadores
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </div>
+                        </nav>
+                        <!--Tab superior contenido crear-->
+                        <div class="tab-content">
+                            <!--Tab superior contenido crear partidos-->
+                            <div class="tab-pane fade active show" id="nav-cpartidos" role="tabpanel" aria-labelledby="nav-cpartidos-tab" >
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Partidos
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+                                            <div class="card bg-info mb-3">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Nuevo encuentro </h5>
+                                                    <p class="card-text">Cree un nuevo encuentro del mundial. </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <form name="myForm">
+                                                                <div class="form-group">
+                                                                    <label >Seleccione el equipo local</label>
+                                                                    <select class="form-control"
+                                                                            ng-model="newPartido.equipo_l_i" required>
+                                                                        <option value="">--Seleccione--</option>
+                                                                        <option ng-repeat="pais in paises"
+                                                                                value="{{pais.nombre}}">{{pais.nombre}}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Seleccione el equipo visitante</label>
+                                                                    <select class="form-control" required
+                                                                            ng-model="newPartido.equipo_v_i">
+                                                                        <option value="">--Seleccione--</option>
+                                                                        <option ng-repeat="pais in paises"
+                                                                                value="{{pais.nombre}}">{{pais.nombre}}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label >Estadio</label>
+                                                                    <input class="form-control" type="text"
+                                                                           ng-model="newPartido.estadio_i">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label >Fecha de encuentro</label>
+                                                                    <input class="form-control" type="date"
+                                                                           ng-model="newPartido.fecha_i">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label >Hora de encuentro</label>
+                                                                    <input class="form-control" type="time"
+                                                                           ng-model="newPartido.hora_i">
+                                                                </div>
+
+                                                                <button class=" btn btn-dark  btn-raised bg-success "
+                                                                        type="submit" ng-click='registrarPartido()'
+                                                                        ng-disabled='myForm2.$invalid || selected'>
+                                                                    Agregar
+                                                                </button>
+                                                                <button class=" btn   btn-raised bg-light" type="reset">
+                                                                    Limpiar
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive md">
+                                                                <thead>
+                                                                <tr>
+
+                                                                    <th scope="col">Local</th>
+                                                                    <th scope="col">Visitante</th>
+                                                                    <th scope="col">Fecha</th>
+                                                                    <th scope="col">Estadio</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="partido in partidos">
+                                                                    <td>{{partido.equipo_l}}</td>
+                                                                    <td>{{partido.equipo_v}}</td>
+                                                                    <td>{{partido.fecha}}</td>
+                                                                    <td>{{partido.hora}}</td>
+                                                                    <td>{{partido.estadio}}</td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <a href="localhost:8000" class="btn btn-primary  active" role="button"
+                                           aria-pressed="true">Ver partidos </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Tab superior contenido crear noticias-->
+                            <div class="tab-pane fade" id="nav-cnoticias" role="tabpanel"
+                                 aria-labelledby="nav-cnoticias-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Noticias
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+                                            <div class="card bg-info mb-3">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Nueva Noticias </h5>
+                                                    <p class="card-text">Cree una nueva noticia </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5" >
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <form >
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Titulo de la
+                                                                        noticia</label>
+                                                                    <input type="text"  ng-model="newNoticia.titulo_i" class="form-control"
+                                                                           id="exampleFormControlInput1">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">Cuerpo de
+                                                                        la noticia</label>
+                                                                    <textarea class="form-control" ng-model="newNoticia.cuerpo_i"
+                                                                              id="exampleFormControlTextarea1"
+                                                                              rows="3" maxlength="115" ></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input class="form-control form-control-sm"
+                                                                           ng-model="newNoticia.fuente_i" type="text"
+                                                                           placeholder="Link de la fuente de la noticia" >
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <input class="form-control form-control-sm"
+                                                                           ng-model="newNoticia.imagen_i" type="text"
+                                                                           placeholder="Link de la foto" >
+                                                                </div>
+                                                               <!-- <div class="form-group">
+                                                                    <label for="exampleInputFile"
+                                                                           class="bmd-label-floating">Foto de la
+                                                                        noticia</label>
+                                                                    <input type="file" class="form-control-file"
+                                                                           id="exampleInputFile">
+                                                                    <small class="text-muted">Selecciona una foto para
+                                                                        poder subirla
+                                                                    </small>
+                                                                </div>-->
+                                                                <button class=" btn btn-dark  btn-raised bg-danger "
+                                                                        type="submit" ng-click="registrarNoticia()">Aceptar
+                                                                </button>
+                                                                <button class=" btn   btn-raised bg-light" type="reset">
+                                                                    Limpiar
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive md">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">Titulo</th>
+                                                                    <th scope="col">Cuerpo</th>
+                                                                    <th scope="col">Fuente</th>
+                                                                    <th scope="col">Imagen</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="noti in noticias">
+                                                                    <td>{{noti.titulo}}</td>
+                                                                    <td>{{noti.cuerpo}}</td>
+                                                                    <td><a href="{{noti.fuente}}"  target="_blank">
+                                                                        {{noti.fuente}}
+                                                                    </a>
+                                                                    </td>
+                                                                    <td><img style="height: 53px;" src="{{noti.imagen}}"></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <a href="Noticias.html" class="btn btn-primary  active" role="button"
+                                           aria-pressed="true">Ver noticias </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Tab superior contenido crear jugadores-->
+                            <div class="tab-pane fade" id="nav-cjugadores" role="tabpanel"
+                                 aria-labelledby="nav-cjugadores-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Jugadores
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+                                            <div class="card bg-info mb-3">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Nueva jugador destacado </h5>
+                                                    <p class="card-text">Cree una nuevo jugador </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <form action="">
+                                                                <div class="form-group">
+                                                                    <label>Nombre del jugador</label>
+                                                                    <input type="email" class="form-control">
+                                                                </div>
+                                                                <br>
+                                                                <div class="form-group">
+                                                                    <label class="bmd-label-floating">Foto del
+                                                                        jugador</label>
+                                                                    <input type="file" class="form-control-file">
+                                                                    <small class="text-muted">Selecciona una foto para
+                                                                        poder subirla
+                                                                    </small>
+                                                                </div>
+                                                                <button class=" btn btn-dark  btn-raised bg-danger "
+                                                                        type="submit">Aceptar
+                                                                </button>
+                                                                <button class=" btn   btn-raised bg-light" type="reset">
+                                                                    Limpiar
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive md">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Nombres</th>
+                                                                    <th scope="col">Apellidos</th>
+                                                                    <th scope="col">Logro</th>
+                                                                    <th scope="col">Foto</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Paolo</td>
+                                                                    <td>Guerrero</td>
+                                                                    <td>Fumo 3 kilos de coca :v</td>
+                                                                    <td><img style="height: 53px"
+                                                                             src="Files/jugadores/paolo-guerrero.png"
+                                                                             alt=""></td>
+
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <a href="Noticias.html" class="btn btn-primary  active" role="button"
+                                           aria-pressed="true">Ver Inicio </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Tab inferior items eliminar-->
+                <div class="tab-pane fade bg-secondary bg-inverse" id="nav-eliminar" role="tabpanel" aria-labelledby="nav-eliminar-tab">
+                    <div class="bd-example bd-example-tabs">
+                        <!--Tab superior eliminar-->
+                        <nav>
+                            <div class="nav nav-tabs" role="tablist">
+                                <a class="nav-item nav-link active show" id="nav-dpartidos-tab" data-toggle="tab"
+                                   href="#nav-dpartidos" role="tab" aria-controls="nav-dpartidos" aria-selected="true">Partidos
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-dnoticias-tab" data-toggle="tab"
+                                   href="#nav-dnoticias" role="tab" aria-controls="nav-dnoticias" aria-selected="false">Noticias
+                                    <div class="ripple-container"></div>
+                                </a>
+                                <a class="nav-item nav-link" id="nav-djugadores-tab" data-toggle="tab"
+                                   href="#nav-djugadores" role="tab" aria-controls="nav-djugadores"
+                                   aria-selected="false">Jugadores
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </div>
+                        </nav>
+                        <!--Tab superior contenido eliminar-->
+                        <div class="tab-content">
+                            <!--Tab superior contenido eliminar partidos-->
+                            <div class="tab-pane fade active show" id="nav-dpartidos" role="tabpanel" aria-labelledby="nav-dpartidos-tab">
+                                <div class="card ">
+                                    <div class="card-header h2">
+                                        Partidos
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+                                            <div class="card bg-info mb-3">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Elimina los jugadores </h5>
+                                                    <p class="card-text">
+                                                        Eliminar los jugadores de las tañbas , por si te equivocaste .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive md">
+                                                                <thead>
+                                                                <tr>
+
+                                                                    <th scope="col">Pais anfrition</th>
+                                                                    <th scope="col">Pais invitado</th>
+                                                                    <th scope="col">Hora</th>
+                                                                    <th scope="col">Fecha</th>
+                                                                    <th scope="col">Accion</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="partido in partidos"
+                                                                    ng-click="selectPartido(partido)">
+
+                                                                    <td>{{partido.equipo_l}}</td>
+                                                                    <td>{{partido.equipo_v}}</td>
+                                                                    <td>{{partido.hora}}</td>
+                                                                    <td>{{partido.fecha}}</td>
+                                                                    <td>{{partido.estadio}}</td>
+
+
+                                                                    <td>
+                                                                        <button class="btn btn-light bg-danger active "
+                                                                                data-toggle="modal"
+                                                                                data-target="#dpartidosmodal">Eliminar
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                                <!--Modal-->
+                                                                <div class="modal fade" id="dpartidosmodal"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="exampleModalLongTitle"
+                                                                     aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Modal title</h5>
+                                                                                <button type="button" class="close"
+                                                                                        data-dismiss="modal"
+                                                                                        aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                ¿Desea eliminar este encuentro?<br>
+
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="submit"
+                                                                                        class="btn btn-light bg-danger active"
+                                                                                        data-dismiss="modal"
+                                                                                        ng-click="borrarPartido(newPartido)">
+                                                                                    Eliminar
+                                                                                </button>
+                                                                                <button type="button"
+                                                                                        class="btn btn-primary">Cancel
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <a href="Noticias.html" class="btn btn-primary  active" role="button"
+                                           aria-pressed="true">Ver noticias </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Tab superior contenido eliminar noticias-->
+                            <div class="tab-pane fade" id="nav-dnoticias" role="tabpanel" aria-labelledby="nav-dnoticias-tab">
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                       <div class="container-fluid">
+                                            <div class="card bg-info mb-3">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Elimina los jugadores </h5>
+                                                    <p class="card-text">
+                                                        Eliminar las noticias, por si te equivocaste .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <table class="table table-hover table-responsive md">
+                                                                <thead>
+                                                                <thead>
+                                                                <tr>
+                                                                    <th scope="col">Titulo</th>
+                                                                    <th scope="col">Cuerpo</th>
+                                                                    <th scope="col">Fuente</th>
+                                                                    <th scope="col">Imagen</th>
+                                                                    <th scope="col">Acción</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr ng-repeat="noti in noticias" ng-click="selectPartido(partido)">
+                                                                    <td>{{noti.titulo}}</td>
+                                                                    <td>{{noti.cuerpo}}</td>
+                                                                    <td><a href="{{noti.fuente}}">
+                                                                        {{noti.fuente}}
+                                                                    </a>
+                                                                    </td>
+                                                                    <td> <img style="height: 53px;" src="{{noti.imagen}}"></td>
+                                                                    <td> <button class="btn btn-light bg-danger active "
+                                                                                data-toggle="modal"
+                                                                                data-target="#dpartidosmodal">Eliminar
+                                                                        </button></td>
+                                                                </tr>
+                                                                </tbody>
+                                                          
+                                                                <!--Modal-->
+                                                                <div class="modal fade" id="dpartidosmodal"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="exampleModalLongTitle"
+                                                                     aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Noticias</h5>
+                                                                                <button type="button" class="close"
+                                                                                        data-dismiss="modal"
+                                                                                        aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                ¿Desea eliminar esta noticia?<br>
+
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="submit"
+                                                                                        class="btn btn-light bg-danger active"
+                                                                                        data-dismiss="modal"
+                                                                                        ng-click="borrarNoticia(newNoticia)">
+                                                                                    Eliminar
+                                                                                </button>
+                                                                                <button type="button"
+                                                                                        class="btn btn-primary">Cancelar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--Tab superior contenido eliminar jugadores-->
+                            <div class="tab-pane fade" id="nav-djugadores" role="tabpanel"
+                                 aria-labelledby="nav-djugadores-tab">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Tab inferior items-->
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

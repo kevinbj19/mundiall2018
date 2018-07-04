@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5b26c01baa5464633f8e54c1"},"fecha":"2018-06-17","equipo_l":"Argentina","equipo_v":"Uruguay","estadio":"Monumental","__v":0}
+{"_id":{"$oid":"5b26c49a1bcacb6666c2eeba"},"fecha":"2018-06-14","equipo_l":"Rusia","equipo_v":"Arabia Saudita","estadio":"Nacional","__v":0}
+{"_id":{"$oid":"5b26c4b42dd06d668ca3978c"},"fecha":"2018-06-15","equipo_l":"España","equipo_v":"Portugal","estadio":"Sacobich","__v":0}
+{"_id":{"$oid":"5b26c4cf28be4e66ca0aed1e"},"fecha":"2018-06-15","equipo_l":"Iran","equipo_v":"Marruecos","estadio":"Moscu","__v":0}

@@ -18,7 +18,7 @@
         <script src="nucleo.js">
         </script>
     </head>
-    <body cz-shortcut-listen="true" ng-controller="noticiasController">
+    <body cz-shortcut-listen="true">
         <div class="container-fluid backgroundparalax">
             <div class="">
                 <header class="blog-header py-3 ">
@@ -72,9 +72,9 @@
             </div>
             <div class="row ">
                 <div class="col-md-12 blog-main">
-                    <div class="row">
-                        <div card="" class="col-md-6 col-sm-12 " flex-md-row="" h-md-250"="" mb-4="" ng-repeat="noti in noticias">
-                            <div "="" class=" none-shadow=">
+                    <div class="row" ng-controller="noticiasController">
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="card flex-md-row mb-4 none-shadow h-md-250">
                                 <div class="card-body d-flex flex-column align-items-start">
                                     <h3 class="mb-2">
                                         <a class="text-dark font-weight-bold" href="#">
@@ -96,36 +96,36 @@
                                 </img>
                             </div>
                         </div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        Anterior
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        1
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        2
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        3
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        Siguiente
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">
+                                    Anterior
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    1
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    2
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    3
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    Siguiente
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

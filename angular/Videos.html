@@ -77,7 +77,7 @@
                     Aca prodras encontrar las videos de los partidos
                 </p>
             </div>
-            <div class="row ">
+            <div class="row " ng-controller="videosController">
                 <div class="col-md-12">
                     <p class="display-4">
                         <font color="#dc143c">
@@ -86,31 +86,13 @@
                             </strong>
                         </font>
                     </p>
-                    <div class="row mb-2 bg-light box-shadow p-2">
+                    <div class="row mb-2 bg-light box-shadow p-2" ng-repeat="video in videos">
                         <div class="col-md-4 col-sm-12 ">
                             <font class="h3 mb-5" color="#dc143c">
-                                Goleadas de Perú
+                                {{video.titulo}}
                             </font>
                             <div class="embed-responsive embed-responsive-4by3">
-                                <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/6HcV-QNi91A" width="854">
-                                </iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 ">
-                            <font class="h3 mb-5" color="#dc143c">
-                                Belgica  vs Japon
-                            </font>
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/hnh7QDmg060" width="854">
-                                </iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 ">
-                            <font class="h3 mb-5" color="#dc143c">
-                                Belgica  vs Japon
-                            </font>
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/WGkk78mhsiU" width="854">
+                                <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="{{video.link}}" width="854">
                                 </iframe>
                             </div>
                         </div>

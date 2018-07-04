@@ -15,7 +15,7 @@ module.exports = {
         app.post('/api/partido',Controlador.setPartido);
 
         //A la aplicacion principal 
-        app.get('*',function(req,res){
+        app.get('/',function(req,res){
         res.sendFile( mainDir + 'c:/nodejs/mundiall/mundiall/angular/Editor.html'); 
         });
 

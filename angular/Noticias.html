@@ -18,7 +18,7 @@
         <script src="nucleo.js">
         </script>
     </head>
-    <body cz-shortcut-listen="true" ng-controller="controladorPrincipal">
+    <body cz-shortcut-listen="true" ng-controller="noticiasController">
         <div class="container-fluid backgroundparalax">
             <div class="">
                 <header class="blog-header py-3 ">
@@ -73,58 +73,59 @@
             <div class="row ">
                 <div class="col-md-12 blog-main">
                     <div class="row">
-                        <div card="" class="col-md-6 col-sm-12 " flex-md-row="" h-md-250"="" mb-4="" ng-repeat="noti in noticias>
-                            <div class=" none-shadow="">
-                            <div class="card-body d-flex flex-column align-items-start">
-                                <h3 class="mb-2">
-                                    <a class="text-dark font-weight-bold" href="#">
-                                        <font color="#dc143c" size="4em">
-                                            {{noti.titulo}}
+                        <div card="" class="col-md-6 col-sm-12 " flex-md-row="" h-md-250"="" mb-4="" ng-repeat="noti in noticias">
+                            <div "="" class=" none-shadow=">
+                                <div class="card-body d-flex flex-column align-items-start">
+                                    <h3 class="mb-2">
+                                        <a class="text-dark font-weight-bold" href="#">
+                                            <font color="#dc143c" size="4em">
+                                                {{noti.titulo}}
+                                            </font>
+                                        </a>
+                                    </h3>
+                                    <p class="card-text mb-auto font-italic">
+                                        {{noti.cuerpo}}
+                                    </p>
+                                    <a href="#">
+                                        <font class="badge-pill bg-light font-italic">
+                                            Continue leyendo ...
                                         </font>
                                     </a>
-                                </h3>
-                                <p class="card-text mb-auto font-italic">
-                                    {{noti.cuerpo}}
-                                </p>
-                                <a href="#">
-                                    <font class="badge-pill bg-light font-italic">
-                                        Continue leyendo ...
-                                    </font>
-                                </a>
+                                </div>
+                                <img alt="Thumbnail [200x250]" class="card-img-right flex-auto d-none d-md-block " data-holder-rendered="true" data-src="holder.js/200x250?theme=thumb" src="{{noti.imagen}}" style="width: 200px; height: 200px;border-radius:.5em">
+                                </img>
                             </div>
-                            <img alt="Thumbnail [200x250]" class="card-img-right flex-auto d-none d-md-block " data-holder-rendered="true" data-src="holder.js/200x250?theme=thumb" src="{{noti.imagen}}" style="width: 200px; height: 200px;border-radius:.5em">
-                            </img>
                         </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">
+                                        Anterior
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        Siguiente
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">
-                                    Anterior
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    1
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    2
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    3
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    Siguiente
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>

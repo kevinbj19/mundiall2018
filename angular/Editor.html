@@ -773,43 +773,38 @@
                                     <div aria-labelledby="nav-cjugadores-tab" class="tab-pane fade" id="nav-cjugadores" role="tabpanel">
                                         <div class="card ">
                                             <div class="card-header h2">
-                                                Jugadores
+                                                Videos
                                             </div>
                                             <div class="card-body">
                                                 <div class="container-fluid">
                                                     <div class="card bg-info mb-3">
                                                         <div class="card-body">
                                                             <h5 class="card-title">
-                                                                Nueva jugador destacado
+                                                                Nueva partido destacado
                                                             </h5>
                                                             <p class="card-text">
-                                                                Cree una nuevo jugador
+                                                                Publica un nuevo video
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row" ng-controller="videosController">
                                                         <div class="col-md-5">
                                                             <div class="card">
                                                                 <div class="card-body">
                                                                     <form action="">
                                                                         <div class="form-group">
                                                                             <label>
-                                                                                Nombre del jugador
+                                                                                Link del video
                                                                             </label>
-                                                                            <input class="form-control" type="email">
+                                                                            <input class="form-control" ng-model="newVideo.fuente_vi" type="text">
                                                                             </input>
                                                                         </div>
                                                                         <br>
                                                                             <div class="form-group">
-                                                                                <label class="bmd-label-floating">
-                                                                                    Foto del
-                                                                        jugador
+                                                                                <label>
+                                                                                    Titulo del video
                                                                                 </label>
-                                                                                <input class="form-control-file" type="file">
-                                                                                    <small class="text-muted">
-                                                                                        Selecciona una foto para
-                                                                        poder subirla
-                                                                                    </small>
+                                                                                <input class="form-control" ng-model="newVideo.titulo_vi" type="text">
                                                                                 </input>
                                                                             </div>
                                                                             <button class=" btn btn-dark btn-raised bg-danger " type="submit">
@@ -833,35 +828,30 @@
                                                                                     #
                                                                                 </th>
                                                                                 <th scope="col">
-                                                                                    Nombres
+                                                                                    Titulo
                                                                                 </th>
                                                                                 <th scope="col">
-                                                                                    Apellidos
+                                                                                    Link del video
                                                                                 </th>
                                                                                 <th scope="col">
-                                                                                    Logro
-                                                                                </th>
-                                                                                <th scope="col">
-                                                                                    Foto
+                                                                                    Video
                                                                                 </th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
-                                                                            <tr>
+                                                                            <tr ng-repeat="video in videos">
                                                                                 <th scope="row">
                                                                                     1
                                                                                 </th>
                                                                                 <td>
-                                                                                    Paolo
+                                                                                    {{video.titulo}}
                                                                                 </td>
                                                                                 <td>
-                                                                                    Guerrero
+                                                                                    {{video.link}}
                                                                                 </td>
                                                                                 <td>
-                                                                                    Fumo 3 kilos de coca :v
-                                                                                </td>
-                                                                                <td>
-                                                                                    <img alt="" src="Files/jugadores/paolo-guerrero.png" style="height: 53px"/>
+                                                                                    <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="15" src="{{video.link}}" width="30">
+                                                                                    </iframe>
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>

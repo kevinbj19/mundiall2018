@@ -66,6 +66,30 @@ function mostrarPaises($scope,$http){
     });
 }
 
+
+function videosController($scope,$http){
+    $scope.videos = {};
+      $scope.newVideo = {};
+    $http.get('/api/videos').success(function(data){
+        $scope.videos = data;
+    }).error(function(data){
+        console.log('Error: '+data);
+    });
+
+     $scope.registrarVideo =  function(){
+        $http.post('/api/video',$scope.newVideo)
+            .success(function(data){
+                $scope.newVideo = {};
+                $scope.videos = data;
+                //  console.log($scope.newVideo);
+            })
+            .error(function(data){
+                console.log('Error: '+data);
+            });
+    };
+}
+
+
 function noticiasController($scope,$http){
         $scope.noticias = {};
     $scope.newNoticia = {};

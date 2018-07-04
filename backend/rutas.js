@@ -10,10 +10,11 @@ module.exports = {
         app.get('/api/partidos', Controlador.getPartidos);
         app.get('/api/paises', Controlador.getPaises);
         app.get('/api/noticias', Controlador.getNoticias);
-          app.get('/api/noticias', Controlador.getNoticias);              
+        app.get('/api/noticias', Controlador.getNoticias);
+        app.get('/api/videos', Controlador.getVideos);              
         // Crear una nueva area
         app.post('/api/partido',Controlador.setPartido);
-
+        app.post('/api/video', Controlador.setVideo);    
         //A la aplicacion principal 
         app.get('/',function(req,res){
         res.sendFile( mainDir + 'c:/nodejs/mundiall/mundiall/angular/Editor.html'); 

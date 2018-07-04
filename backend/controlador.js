@@ -1,6 +1,7 @@
 var Partido= require('./modelos/Partido');
 var Paises= require('./modelos/Paises');
 var Noticias= require('./modelos/Noticia');
+var Videos=require('./modelos/Videos');
 //Obtiene todas las PArtidos
 exports.getPartidos = function(req, res){
     Partido.find({}, function(err,partidos){
@@ -82,7 +83,29 @@ exports.getPaises= function(req, res){
 }
 //////////////////////////////////
 
+exports.getVideos= function(req, res){
+    Videos.find({}, function(err,videos){
+        if(err)
+            res.send(err);
+        res.json(videos);
+    })
+}
 
+exports.setVideo = function(req,res){
+    Videos.create({ link : req.body.fuente_vi,     
+                  titulo : req.body.titulo_vi
+              }, function(err,video){
+        //coma
+        if (err)
+            res.send(err);
+
+        Videos.find(function(err,video){
+            if(err)
+                res.send(err);
+            res.json(video);
+        });
+    });
+}
 
 
 
